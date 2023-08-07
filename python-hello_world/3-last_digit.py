@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-num=int(input())
+import random
+num = random.randint(-10000, 10000)
 _dig=num-(int(num/10)*10)
 try:
-    if _dig >5:
+    if num==98:
         print ("Last digit of ",num," is ",_dig," and is greater than 5")
     elif _dig == 0:
         print ("Last digit of ",num," is ",_dig," and is 0")

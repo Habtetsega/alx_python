@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-import random
-num = random.randint(-10000, 10000)
+num=int(input())
 _dig=num-(int(num/10)*10)
 try:
     if _dig >5:

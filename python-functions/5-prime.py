@@ -7,7 +7,7 @@ def is_prime(number):
 		if number%i==0:
 			count+=1
 	i+=1
-	if count > 2:
+	if count > 2 or number==1:
 		return False
 	else:
 		return True

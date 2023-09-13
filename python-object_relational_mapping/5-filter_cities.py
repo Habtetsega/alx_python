@@ -21,4 +21,3 @@ if __name__ == "__main__":
     # Fetch all rows and filter cities by the specified state
     # and Print the cities separated by commas
     print(", ".join([ct[2] for ct in c.fetchall() if ct[4] == sys.argv[4]]))
-

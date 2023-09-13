@@ -20,4 +20,3 @@ if __name__ == "__main__":
 
     # Fetch all rows and print the states
     [print(city) for city in c.fetchall()]
-

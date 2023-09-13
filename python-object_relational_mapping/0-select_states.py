@@ -9,7 +9,7 @@ def list_all_states(username,password,database):
             db=database)
         cursor=db.cursor()
         cursor.execute("SELECT * FROM states ORDER BY id ASC")
-        rows=cursor.fechall()
+        rows=cursor.fetchall()
         for row in rows:
             print(row)
         db.close()

@@ -6,7 +6,7 @@ import sys
 def list_N(username, password, database):
     db = MySQLdb.connect(host='localhost', port=3306, user=username, passwd=password, db=database)
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ASCII(SUBSTRING(name, 1, 1)) >= 65 AND ASCII(SUBSTRING(name, 1, 1)) <= 90 ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' AND NOT LIKE 'n%' ORDER BY id ASC")
     rows = cursor.fetchall()
     for row in rows:
         print(row)

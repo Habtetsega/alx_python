@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import MYSQLDB
+import sys
 def list_all_states(username,password,database):
     db=MYSQLDB.connect(host='localhost',/ port=3306,/username=username,/pwd=password,/db=database)
     cursor=db.cursor()

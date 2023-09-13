@@ -13,4 +13,3 @@ if __name__ == "__main__":
     # Execute the SQL query to retrieve all states sorted by id
     c.execute("SELECT * FROM `states` ORDER BY `id`")
     [print(state) for state in c.fetchall() if state[1][0] == "N"]
-

@@ -7,12 +7,12 @@ def list_all_states(username,password,database):
             user=username,\
             passwd=password,\
             db=database)
-    cursor=db.cursor()
-    cursor.execut("SELECT * FROM states ORDER BY ASC")
-    rows=cursor.fechall()
-    for row in rows:
-        print(row)
-    db.close()
+        cursor=db.cursor()
+        cursor.execut("SELECT * FROM states ORDER BY ASC")
+        rows=cursor.fechall()
+        for row in rows:
+            print(row)
+        db.close()
 
 
 if _name_="_main_":

@@ -13,7 +13,7 @@ def list_N(username, password ,database):
     for row in rows:
         print (row)
 
-if_name_=="_main_":
+if __name__ == '__main__':
     username=sys.arg[1]
     password=sys.arg[2]
     database=sys.arg[3]

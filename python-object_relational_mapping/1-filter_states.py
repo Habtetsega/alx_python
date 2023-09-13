@@ -14,7 +14,7 @@ def list_N(username, password ,database):
         print (row)
 
 if __name__ == '__main__':
-    username=sys.arg[1]
-    password=sys.arg[2]
-    database=sys.arg[3]
+    username=sys.argv[1]
+    password=sys.argv[2]
+    database=sys.argv[3]
     list_N(username,password ,database)

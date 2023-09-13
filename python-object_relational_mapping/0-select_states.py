@@ -15,7 +15,7 @@ def list_all_states(username,password,database):
         db.close()
 
 
-if _name_="_main_":
+if _name_=="_main_":
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]

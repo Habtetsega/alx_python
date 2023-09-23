@@ -1,5 +1,5 @@
 def safe_print_division(a, b):
-    while true:
+    while True:
         try:
             c = a/b
             break

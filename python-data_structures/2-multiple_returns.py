@@ -1,6 +1,7 @@
 def multiple_returns(sentence):
     l=len(sentence)
-    f=sentence[0]
-    if l==0 and f==0:
+    if l==0:
         f=None
+    else:
+        f=sentence[0]
     return l,f

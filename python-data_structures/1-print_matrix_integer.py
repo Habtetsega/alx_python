@@ -1,7 +1,5 @@
 def print_matrix_integer(matrix=[[]]):
-    r=len(matrix)
-    c=len(matrix[0])
-    for i in range(r):
-        for j in range(c):
-            print("{:d}".format(matrix[i][j]),end=" ")
-        print()
+    for row in matrix:
+        for element in row:
+            print("{:d}".format(element), end=" ")
+        print()  # Move to the next line after printing each row

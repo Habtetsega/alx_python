@@ -3,7 +3,7 @@ base.py
 """Defines a rectangle class."""
 from models.base import Base
 
-
+"""Definens class"""
 class Rectangle(Base):
     """Represent a rectangle."""
 
@@ -79,7 +79,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-
+"""Difines area"""
     def area(self):
         """Return the area of the Rectangle."""
         return self.width * self.height

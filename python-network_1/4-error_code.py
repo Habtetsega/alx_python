@@ -1,4 +1,4 @@
-import reques
+import requests
 import sys
 url=sys[1]
 res_1=requests.get(url)

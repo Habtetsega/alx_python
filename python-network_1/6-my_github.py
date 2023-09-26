@@ -12,7 +12,7 @@ response = requests.get("https://api.github.com/user", auth=(username, password)
 if response.status_code == 200:
     # Display user id from the response
     json_data = response.json()
-    print("User ID:", json_data['id'])
+    print(json_data['id'])
 else:
     print("Failed to retrieve user information")
 

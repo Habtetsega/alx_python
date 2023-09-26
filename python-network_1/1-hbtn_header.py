@@ -24,3 +24,4 @@ url = sys.argv[1]
 
 # Get the X-Request-Id and display it
 request_id = get_request_id(url)
+print(request_id)

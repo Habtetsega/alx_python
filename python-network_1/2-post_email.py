@@ -7,4 +7,4 @@ email=sys.argv[2]
 playload = {'email':email}
 """post request send"""
 r=requests.post(url,data=playload)
-return r.text
+print(r.text)

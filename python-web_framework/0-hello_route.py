@@ -1,5 +1,17 @@
 #!/usr/bin/python3
-"""importing Flask"""
+"""
+flask: A popular Python web framework for building web applications easily.
+
+This module provides tools and libraries for handling HTTP requests, rendering templates, managing sessions, and more.
+
+Usage:
+    import flask
+
+    # Example usage
+    app = flask.Flask(__name__)
+    ...
+
+"""
 from flask import Flask
 app = Flask(__name__)
 @app.route("/", strict_slashes=False)

@@ -19,5 +19,11 @@ def ctext(text):
 def pytext(text):
     new_text = text.replace("_", " ")
     return ("Python {}".format(new_text))
+@app.route('/converters/')
+@app.route('/number/<int:n>')
+def is_int(n):
+    if isinstance(n, int):
+        return ("{} is a number".format(n))
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

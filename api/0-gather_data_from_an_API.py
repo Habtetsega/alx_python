@@ -1,31 +1,15 @@
 python
 import requests
-import sys
 
-def get_employee_details(employee_id):
-    url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    response = requests.get(url)
-    if response.status_code == 200:
-        return response.json()
-    else:
-        return None
+def employee_details():
+    response = requests.get("https://jsonplaceholder.typicode.com/users/1")
+    return response.json()
 
-def get_employee_todos(employee_id):
-    url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
-    response = requests.get(url)
-    if response.status_code == 200:
-        return response.json()
-    else:
-        return None
+def employee_details():
+    response = requests.get("https://jsonplaceholder.typicode.com/users/1/todos")
+    return response.json()
 
-def display_todo_progress(employee_id):
-    employee = get_employee_details(employee_id)
-    todos = get_employee_todos(employee_id)
-
-    if employee is None or todos is None:
-        print("Failed to retrieve employee data.")
-        return
-
+if __name__ == "__main__":
     employee_name = employee['name']
     total_tasks = len(todos)
     done_tasks = sum(todo['completed'] for todo in todos)
@@ -34,11 +18,3 @@ def display_todo_progress(employee_id):
     for todo in todos:
         if todo['completed']:
             print(f"\t{todo['title']}")
-
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python3 0-gather_data_from_an_API.py <employee_id>")
-        sys.exit(1)
-
-    employee_id = int(sys.argv[2])
-    display_todo_progress(employee_id)

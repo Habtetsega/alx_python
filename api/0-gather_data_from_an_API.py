@@ -5,18 +5,12 @@ import sys
 def get_employee_details(employee_id):
     url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
     response = requests.get(url)
-    if response.status_code == 200:
-        return response.json()
-    else:
-        return None
+    return response.json()
 
 def get_employee_todos(employee_id):
     url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
     response = requests.get(url)
-    if response.status_code == 200:
-        return response.json()
-    else:
-        return None
+    return response.json()
 
 def display_todo_progress(employee_id):
     employee = get_employee_details(employee_id)

@@ -5,11 +5,13 @@ def employee_details():
     response = requests.get("https://jsonplaceholder.typicode.com/users/1")
     return response.json()
 
-def employee_details():
+def employee_details_todo():
     response = requests.get("https://jsonplaceholder.typicode.com/users/1/todos")
     return response.json()
 
 if __name__ == "__main__":
+    employee = employee_details()
+    todos = employee_details_todo()
     employee_name = employee['name']
     total_tasks = len(todos)
     done_tasks = sum(todo['completed'] for todo in todos)

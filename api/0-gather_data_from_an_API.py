@@ -22,8 +22,8 @@ def get_employee_info(employee_id):
 
     # Print employee TODO list progress
     print(f"Employee {employee_name} is done with tasks ({num_completed_tasks}/{total_tasks}):")
-    for task in completed_tasks:
-        print(f"\t{task['title']}")
+    for i, task in enumerate(completed_tasks, 1):
+        print(f"\t{i}. {task['title']}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

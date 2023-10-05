@@ -1,22 +1,30 @@
-python
 import requests
+import sys
 
-def employee_details():
-    response = requests.get("https://jsonplaceholder.typicode.com/users/1")
-    return response.json()
+def get_employee_info(employee_id):
+    base_url = "https://jsonplaceholder.typicode.com"
+    employee_url = f"{base_url}/users/{employee_id}"
+    todos_url = f"{base_url}/users/{employee_id}/todos"
 
-def employee_details_todo():
-    response = requests.get("https://jsonplaceholder.typicode.com/users/1/todos")
-    return response.json()
+    # Fetch employee details
+    response = requests.get(employee_url)
+    employee_data = response.json()
+    employee_name = employee_data["name"]
+    todos_data = response.json()
+
+    # Calculate the number of completed tasks
+    completed_tasks = [task for task in todos_data if task["completed"]]
+    num_completed_tasks = len(completed_tasks)
+    total_tasks = len(todos_data)
+
+    print(f"Employee {employee_name} is done with tasks ({num_completed_tasks}/{total_tasks}):")
+    for task in completed_tasks:
+        print(f"\t{task['title']}")
 
 if __name__ == "__main__":
-    employee = employee_details()
-    todos = employee_details_todo()
-    employee_name = employee['name']
-    total_tasks = len(todos)
-    done_tasks = sum(todo['completed'] for todo in todos)
+    if len(sys.argv) != 2:
+        print("Usage: python3 script_name.py employee_id")
+        sys.exit(1)
 
-    print(f"Employee {employee_name} is done with tasks({done_tasks}/{total_tasks}):")
-    for todo in todos:
-        if todo['completed']:
-            print(f"\t{todo['title']}")
+    employee_id = sys.argv[1]
+    get_employee_info(employee_id)

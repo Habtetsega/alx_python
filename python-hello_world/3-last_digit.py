@@ -5,7 +5,7 @@ import random
 number = random.randint(-10000, 10000)
 
 # Extract the last digit of the number using modulus operator (%)
-last_digit = abs(number) % 10
+last_digit = number % 10
 
 # Print the result based on the value of the last digit
 print("Last digit of", number, "is", last_digit, end=" ")

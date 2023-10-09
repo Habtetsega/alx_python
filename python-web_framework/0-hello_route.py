@@ -1,23 +1,33 @@
 #!/usr/bin/python3
 """
-flask: A popular Python web framework for building web applications easily.
+Flask Web Application
 
-This module provides tools and libraries for handling HTTP requests, rendering templates, managing sessions, and more.
+This module contains a simple Flask web application that displays "Hello HBNB!" on the root URL ("/").
+
+Routes:
+    /: Displays "Hello HBNB!"
 
 Usage:
-    import flask
+    $ python app.py
 
-    # Example usage
-    app = flask.Flask(__name__)
-    ...
+    The web application will start and listen on 0.0.0.0:5000.
+    Visit http://localhost:5000/ in a web browser to see the message.
 
 """
+
 from flask import Flask
+
 app = Flask(__name__)
+
 @app.route("/", strict_slashes=False)
-"""Difining hello fun"""
-def hello_hbnb:
-    """display Hello HBNB"""
-    return("Hello HBNB!")
-if __name__ = "__main__":
-    app.run(host='0.0.0.0', port=5000)
+def hello_hbnb():
+    """
+    Displays "Hello HBNB!".
+
+    Returns:
+        str: The message "Hello HBNB!".
+    """
+    return "Hello HBNB!"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)

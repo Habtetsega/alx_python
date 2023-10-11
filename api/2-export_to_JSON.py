@@ -19,7 +19,7 @@ if __name__ == "__main__":
     response_tasks = requests.get(f"https://jsonplaceholder.typicode.com/todos?userId={user_id}")
     tasks_data = response_tasks.json()
 
-    # Create tasks dictionary
+    # Create tasks list
     tasks = []
     for task in tasks_data:
         task_completed = task.get("completed")
@@ -32,4 +32,3 @@ if __name__ == "__main__":
     with open(filename, "w") as jsonfile:
         json.dump({user_id: tasks}, jsonfile)
 
-    print(f"Data exported to {filename} successfully.")

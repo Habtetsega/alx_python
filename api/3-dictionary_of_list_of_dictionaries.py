@@ -32,4 +32,3 @@ if __name__ == "__main__":
     with open(filename, "w") as jsonfile:
         json.dump(tasks, jsonfile)
 
-    print(f"Data exported to {filename} successfully.")

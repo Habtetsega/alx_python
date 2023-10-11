@@ -24,10 +24,9 @@ if __name__ == "__main__":
     with open(filename, "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
-
+        
         for task in tasks_data:
-            task_completed = str(task.get("completed"))
+            task_completed = task.get("completed")
             task_title = task.get("title")
-            writer.writerow([user_id, username, task_completed, task_title])
+            writer.writerow([user_id, username, str(task_completed), task_title])
 
-    print(f"Data exported to {filename} successfully.")
